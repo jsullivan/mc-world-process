@@ -13,9 +13,15 @@ echo "DONE!"
 echo "====================================="
 
 # Move dir to mapcrafter directory
-printf "Moving world tmapcrafter directory..."
+printf "Moving world to mapcrafter directory..."
 mv $world /var/www/mc.dipperstove.com/worlds/aincrad/
 echo "done!"
+
+# Cleanup incoming directory
+printf "Cleaning incoming directory..."
+rm -rf $world
+rm $world.tar
+echo "Done!"
 
 # Symlink current to the new world save
 printf "Symlinking..."
