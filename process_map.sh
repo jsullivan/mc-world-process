@@ -1,6 +1,5 @@
-echo "Hello world!"
 incoming_path=$HOME/minecraft
-world=Aincrad
+world=$(ls -t Aincrad* | head -1)
 
 # Uncompress tarball
 echo "====================================="
@@ -27,7 +26,7 @@ echo "Done!"
 printf "Symlinking..."
 cd /var/www/mc.dipperstove.com/worlds/aincrad
 rm current
-ln -s Aincrad current
+ln -s $world current
 echo "done!"
 
 # Render maps
